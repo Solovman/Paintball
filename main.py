@@ -14,12 +14,12 @@ canvas = Canvas(root, width=width_window, height=height_window, bg="gray")
 canvas.pack()
 
 
-# Очистка экрана
+# Screen cleaning
 def clear_screen():
     canvas.delete('all')
 
 
-# Отрисовка прямоугольника, произвольного цвета с выбранным уровнем наклона и размером
+# Draw a rectangle, arbitrary color with the selected slope level and size
 def rendering(event):
     x, y = event.x, event.y
     print('{} {}'.format(x, y))
@@ -38,22 +38,22 @@ def rendering(event):
                           fill=colors, outline="black")
 
 
-# Рабочее поле
+# Working field
 canvas = Canvas(root, width=600, height=400, bg="white")
 canvas.place(x=50, y=100)
 canvas.bind('<Button-1>', rendering)
 
-# Кнопка отчистки
+# Clear button
 clear_button = Button(text='Clear', command=clear_screen, font=('Arial', 10, 'bold'))
 clear_button.place(x=350, y=60)
 
-# Ползунок регулирующий размер фигуры
+# Slider adjusting the size of the figure
 slider_size = Scale(root, from_=10, to_=100, length=200, orient=HORIZONTAL)
 slider_size.place(x=250, y=520)
 size_label = Label(root, text="Size", font=('Arial', 10, 'bold'))
 size_label.place(x=190, y=540)
 
-# Ползунок регулирующий угол наклона фигуры
+# Slider adjusting the angle of the figure
 slider_rotation = Scale(root, from_=0, to_=360, length=200, orient=HORIZONTAL)
 slider_rotation.place(x=250, y=570)
 rotation_label = Label(root, text="Rotation", font=('Arial', 10, 'bold'))
